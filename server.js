@@ -20,9 +20,9 @@ app.get("/", function (req, res) {
 });
 
 app.get("/api/whoami", (req, res) => {
-  console.log(req);
+  //console.log(req.socket);
   res.json({
-    ipadress: req.ip,
+    ipadress: req.socket.remoteAddress,
     language: req.headers["accept-language"],
     software: req.headers["user-agent"],
   });
